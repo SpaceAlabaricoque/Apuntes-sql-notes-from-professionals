@@ -164,7 +164,36 @@ Grant ==ALL PRIVILEGES== TO THE USER FOR ==ALL TABLES== ON ==ALL DATABASE==.
 
 ```
 
+With `*.*` we select all tables of all databases. With the first `*` we select all databases 
+and with `.*` we select all tables.
 
+With `ALL` we select that the all kind of privileges are grant to the user.
 
+If we want to grant a specific privilege to the user we need to replace `ALL` with the 
+privilege you want the user have.
 
+This is a list of privileges than you can grant to a user => 
 
+`SELECT
+UPDATE
+DELETE
+CREATE
+DROP
+SELECT`
+
+If you want to grant two o more privileges you need to separate with commas.
+
+For example =>
+
+```sql
+
+  GRANT SELECT, UPDATE, DROP ON *.* TO 'userName'@'localhost' WITH GRANT OPTION;
+
+```
+
+### Extra 
+
+If you want to give a table or attribute a name with spaces or a reserved word you need to
+write that name with commas.
+
+`'Name of the table'`
